@@ -1,6 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DictionaryOfManyTranslations {
+    private HashMap<String, ArrayList<String>> dictionary;
+
+    public DictionaryOfManyTranslations() {
+        this.dictionary = new HashMap<>();
+    }
 
     public void add(String word, String translation) {
 
