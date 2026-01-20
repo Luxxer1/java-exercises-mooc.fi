@@ -9,7 +9,8 @@ public class DictionaryOfManyTranslations {
     }
 
     public void add(String word, String translation) {
-
+        this.dictionary.putIfAbsent(word, new ArrayList<>());
+        this.dictionary.get(word).add(translation);
     }
 
     public ArrayList<String> translate(String word) {
