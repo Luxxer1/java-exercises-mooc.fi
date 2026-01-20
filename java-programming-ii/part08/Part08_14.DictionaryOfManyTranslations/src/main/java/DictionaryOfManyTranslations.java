@@ -14,7 +14,8 @@ public class DictionaryOfManyTranslations {
     }
 
     public ArrayList<String> translate(String word) {
-        return this.dictionary.get(word);
+        ArrayList<String> translations = this.dictionary.get(word);
+        return (translations != null) ? translations : new ArrayList<>();
     }
 
     public void remove(String word) {
