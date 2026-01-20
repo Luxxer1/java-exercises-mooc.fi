@@ -29,10 +29,12 @@ replay_pid*
 /target/
 
 # IntelliJ IDEA
-/.idea/
-/*.iml
-*.iws
+out/
+.idea/
+.idea_modules/
+*.iml
 *.ipr
+*.iws
 
 # TMC
 *.tmcproject.yml
