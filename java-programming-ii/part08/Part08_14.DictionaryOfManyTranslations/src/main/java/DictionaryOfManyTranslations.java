@@ -18,6 +18,6 @@ public class DictionaryOfManyTranslations {
     }
 
     public void remove(String word) {
-
+        this.dictionary.remove(word);
     }
 }
