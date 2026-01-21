@@ -22,6 +22,14 @@ public class StorageFacility {
     }
 
     public ArrayList<String> storageUnits() {
-        return new ArrayList<String>(this.storage.keySet());
+        ArrayList<String> storages = new ArrayList<>(this.storage.keySet());
+
+        for (int i = 0; i < storages.size(); i++) {
+            if (this.storage.get(storages.get(i)).isEmpty()) {
+                storages.remove(i);
+            }
+        }
+
+        return storages;
     }
 }
