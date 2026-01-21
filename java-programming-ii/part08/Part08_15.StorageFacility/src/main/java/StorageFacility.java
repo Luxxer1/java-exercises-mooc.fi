@@ -8,7 +8,8 @@ public class StorageFacility {
     }
 
     public void add(String unit, String item) {
-
+        this.storage.putIfAbsent(unit, new ArrayList<>());
+        this.storage.get(unit).add(item);
     }
 
     public void remove(String storageUnit, String item) {
