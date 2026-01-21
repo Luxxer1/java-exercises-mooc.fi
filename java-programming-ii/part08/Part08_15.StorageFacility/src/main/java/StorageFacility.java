@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StorageFacility {
-
+    private HashMap<String, ArrayList<String>> storage;
     public StorageFacility() {
-
+        this.storage = new HashMap<>();
     }
 
     public void add(String unit, String item) {
