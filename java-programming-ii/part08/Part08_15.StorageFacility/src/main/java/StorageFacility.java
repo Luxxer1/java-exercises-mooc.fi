@@ -13,7 +13,7 @@ public class StorageFacility {
     }
 
     public void remove(String storageUnit, String item) {
-
+        this.storage.get(storageUnit).remove(item);
     }
 
     public ArrayList<String> contents(String storageUnit) {
@@ -22,7 +22,6 @@ public class StorageFacility {
     }
 
     public ArrayList<String> storageUnits() {
-
-        return null;
+        return new ArrayList<String>(this.storage.keySet());
     }
 }
