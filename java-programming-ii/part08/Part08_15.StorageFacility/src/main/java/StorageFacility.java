@@ -17,9 +17,8 @@ public class StorageFacility {
     }
 
     public ArrayList<String> contents(String storageUnit) {
-
-
-        return null;
+        ArrayList<String> content = this.storage.get(storageUnit);
+        return (content != null) ? content : new ArrayList<>();
     }
 
     public ArrayList<String> storageUnits() {
