@@ -4,7 +4,6 @@ public class ProductWarehouseWithHistory extends ProductWarehouse {
     public ProductWarehouseWithHistory(String productName, double capacity, double initialBalance) {
         super(productName, capacity);
         changeHistory = new ChangeHistory();
-        changeHistory.add(initialBalance);
         addToWarehouse(initialBalance);
     }
 
