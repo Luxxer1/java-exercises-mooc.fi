@@ -23,4 +23,14 @@ public class ProductWarehouseWithHistory extends ProductWarehouse {
         changeHistory.add(getBalance());
         return taken;
     }
+
+    public void printAnalysis() {
+        System.out.println(
+                "Product: " + getName() + "\n" +
+                "History: " + changeHistory + "\n" +
+                "Largest amount of product: " + changeHistory.maxValue() + "\n" +
+                "Smallest amount of product: " + changeHistory.minValue() + "\n" +
+                "Average: " + changeHistory.average()
+        );
+    }
 }
