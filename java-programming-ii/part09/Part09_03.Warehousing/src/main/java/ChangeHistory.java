@@ -18,6 +18,11 @@ public class ChangeHistory {
     public double maxValue() {
         double value = 0.0;
 
+        if (changeHistory.isEmpty()) {
+            return value;
+        }
+
+        value = changeHistory.get(0);
         for (double number: changeHistory) {
             if (number > value) {
                 value = number;
