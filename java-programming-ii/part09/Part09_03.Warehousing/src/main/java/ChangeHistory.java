@@ -44,6 +44,20 @@ public class ChangeHistory {
         return value;
     }
 
+    public double average() {
+        double average = 0.0;
+
+        if (changeHistory.isEmpty()) {
+            return average;
+        }
+
+        for (double number: changeHistory) {
+            average += number;
+        }
+
+        return average / changeHistory.size();
+    }
+
     @Override
     public String toString() {
         return changeHistory.toString();
