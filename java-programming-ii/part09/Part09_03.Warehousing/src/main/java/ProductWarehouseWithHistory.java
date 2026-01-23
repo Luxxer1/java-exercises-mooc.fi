@@ -11,4 +11,10 @@ public class ProductWarehouseWithHistory extends ProductWarehouse {
     public String history() {
         return changeHistory.toString();
     }
+
+    @Override
+    public void addToWarehouse(double amount) {
+        super.addToWarehouse(amount);
+        changeHistory.add(getBalance());
+    }
 }
