@@ -15,6 +15,18 @@ public class ChangeHistory {
         changeHistory.clear();
     }
 
+    public double maxValue() {
+        double value = 0.0;
+
+        for (double number: changeHistory) {
+            if (number > value) {
+                value = number;
+            }
+        }
+
+        return value;
+    }
+
     @Override
     public String toString() {
         return changeHistory.toString();
