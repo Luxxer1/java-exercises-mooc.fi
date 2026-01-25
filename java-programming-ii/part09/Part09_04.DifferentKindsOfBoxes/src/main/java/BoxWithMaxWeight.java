@@ -11,13 +11,7 @@ public class BoxWithMaxWeight extends Box {
 
     @Override
     public void add(Item item) {
-        int totalWeight = 0;
-
-        for (Item n: items) {
-            totalWeight += n.getWeight();
-        }
-
-        if (totalWeight + item.getWeight() <= maxWeight) {
+        if (weightOfItems() + item.getWeight() <= maxWeight) {
             items.add(item);
         }
     }
@@ -25,5 +19,14 @@ public class BoxWithMaxWeight extends Box {
     @Override
     public boolean isInBox(Item item) {
         return items.contains(item);
+    }
+
+    private int weightOfItems() {
+        int weight = 0;
+        for(Item item: items) {
+            weight += item.getWeight();
+        }
+
+        return weight;
     }
 }
