@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Item {
 
@@ -33,5 +34,9 @@ public class Item {
         Item compared = (Item) object;
 
         return this.getName().equals(compared.getName());
+    }
+
+    public int hashCode() {
+        return Objects.hash(getName());
     }
 }
