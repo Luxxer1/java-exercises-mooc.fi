@@ -18,4 +18,9 @@ public class BoxWithMaxWeight extends Box {
             currentWeight += item.getWeight();
         }
     }
+
+    @Override
+    public boolean isInBox(Item item) {
+        return items.contains(item);
+    }
 }
