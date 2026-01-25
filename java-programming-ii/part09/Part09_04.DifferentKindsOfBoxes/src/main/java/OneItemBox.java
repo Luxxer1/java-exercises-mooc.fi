@@ -1,5 +1,4 @@
 public class OneItemBox extends Box {
-    private boolean hasItem;
     private Item item;
 
     public OneItemBox() { }
@@ -8,5 +7,9 @@ public class OneItemBox extends Box {
         if (this.item == null) {
             this.item = item;
         }
+    }
+
+    public boolean isInBox(Item item) {
+        return this.item.equals(item);
     }
 }
