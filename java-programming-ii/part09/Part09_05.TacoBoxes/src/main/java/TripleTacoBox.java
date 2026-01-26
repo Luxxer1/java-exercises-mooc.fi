@@ -1,5 +1,5 @@
 public class TripleTacoBox implements TacoBox {
-    int tacos;
+    private int tacos;
 
     public TripleTacoBox() {
         this.tacos = 3;
