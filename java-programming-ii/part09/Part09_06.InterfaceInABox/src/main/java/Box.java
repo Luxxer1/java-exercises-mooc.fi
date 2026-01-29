@@ -10,6 +10,10 @@ public class Box implements Packable {
     }
 
     public void add(Packable item) {
+        if (item == this) {
+            return;
+        }
+
         if (weight() + item.weight() <= maxWeight) {
             items.add(item);
         }
