@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Warehouse {
     private Map<String, Integer> prices;
@@ -31,5 +32,9 @@ public class Warehouse {
 
         stocks.replace(product, value - 1);
         return true;
+    }
+
+    public Set<String> products() {
+        return prices.keySet();
     }
 }
