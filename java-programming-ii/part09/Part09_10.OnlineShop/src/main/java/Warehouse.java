@@ -22,4 +22,14 @@ public class Warehouse {
     public int stock(String product) {
         return stocks.getOrDefault(product, 0);
     }
+
+    public boolean take(String product) {
+        int value = stock(product);
+        if (value == 0) {
+            return false;
+        }
+
+        stocks.replace(product, value - 1);
+        return true;
+    }
 }
