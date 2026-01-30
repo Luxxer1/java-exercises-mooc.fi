@@ -9,10 +9,10 @@ public class Warehouse {
     }
 
     public void addProduct(String product, int price, int stock) {
-
+        prices.put(product, price);
     }
 
     public int price(String product) {
-
+        return prices.getOrDefault(product, -99);
     }
 }
