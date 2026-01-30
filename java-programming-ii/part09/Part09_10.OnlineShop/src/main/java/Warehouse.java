@@ -12,6 +12,7 @@ public class Warehouse {
 
     public void addProduct(String product, int price, int stock) {
         prices.put(product, price);
+        stocks.put(product, stock);
     }
 
     public int price(String product) {
