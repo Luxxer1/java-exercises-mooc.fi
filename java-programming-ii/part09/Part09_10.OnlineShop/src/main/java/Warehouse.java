@@ -2,8 +2,8 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Warehouse {
-    Map<String, Integer> prices;
-    Map<String, Integer> stocks;
+    private Map<String, Integer> prices;
+    private Map<String, Integer> stocks;
 
     public Warehouse() {
         this.prices = new HashMap<>();
