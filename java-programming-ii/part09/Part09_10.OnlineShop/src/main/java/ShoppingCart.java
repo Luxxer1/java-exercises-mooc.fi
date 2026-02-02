@@ -24,4 +24,10 @@ public class ShoppingCart {
 
         return value;
     }
+
+    public void print() {
+        for (Item item: cart.values()) {
+            System.out.println(item);
+        }
+    }
 }
