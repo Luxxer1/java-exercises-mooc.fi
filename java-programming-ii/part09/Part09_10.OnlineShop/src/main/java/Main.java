@@ -17,5 +17,14 @@ public class Main {
         System.out.println("stock:");
         System.out.println("coffee: " + warehouse.stock("coffee"));
         System.out.println("sugar: " + warehouse.stock("sugar"));
+
+
+        ShoppingCart cart = new ShoppingCart();
+        cart.add("milk", 3);
+        cart.add("buttermilk", 2);
+        cart.add("cheese", 5);
+        System.out.println("cart price: " + cart.price());
+        cart.add("computer", 899);
+        System.out.println("cart price: " + cart.price());
     }
 }
