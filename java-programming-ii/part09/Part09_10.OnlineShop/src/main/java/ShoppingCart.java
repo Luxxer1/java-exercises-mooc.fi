@@ -14,10 +14,6 @@ public class ShoppingCart {
     }
 
     public int price() {
-        if (items.isEmpty()) {
-            return 0;
-        }
-
         int value = 0;
         for (Item item: items.values()) {
             value += item.price();
