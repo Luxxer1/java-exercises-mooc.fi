@@ -9,12 +9,8 @@ public class ShoppingCart {
     }
 
     public void add(String product, int price) {
-        if (items.containsKey(product)) {
-            items.get(product).increaseQuantity();
-            return;
-        }
-
-        items.put(product, new Item(product, 1, price));
+        items.putIfAbsent(product, new Item(product, 1, price));
+        items.get(product).increaseQuantity();
     }
 
     public int price() {
