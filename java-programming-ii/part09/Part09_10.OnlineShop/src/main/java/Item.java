@@ -17,6 +17,7 @@ public class Item {
         qty += 1;
     }
 
+    @Override
     public String toString() {
         return product + ": " + qty;
     }
