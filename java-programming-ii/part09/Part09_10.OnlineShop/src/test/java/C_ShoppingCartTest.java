@@ -10,7 +10,7 @@ import java.util.Scanner;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class C_ShoppingCartTest {
+public class    C_ShoppingCartTest {
 
     String klassName = "ShoppingCart";
     Reflex.ClassRef<Object> klass;
