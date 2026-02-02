@@ -2,28 +2,28 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class ShoppingCart {
-    private Map<String, Item> cart;
+    private Map<String, Item> items;
 
     public ShoppingCart() {
-        this.cart = new HashMap<>();
+        this.items = new HashMap<>();
     }
 
     public void add(String product, int price) {
-        if (cart.containsKey(product)) {
-            cart.get(product).increaseQuantity();
+        if (items.containsKey(product)) {
+            items.get(product).increaseQuantity();
             return;
         }
 
-        cart.put(product, new Item(product, 1, price));
+        items.put(product, new Item(product, 1, price));
     }
 
     public int price() {
-        if (cart.isEmpty()) {
+        if (items.isEmpty()) {
             return 0;
         }
 
         int value = 0;
-        for (Item item: cart.values()) {
+        for (Item item: items.values()) {
             value += item.price();
         }
 
@@ -31,7 +31,7 @@ public class ShoppingCart {
     }
 
     public void print() {
-        for (Item item: cart.values()) {
+        for (Item item: items.values()) {
             System.out.println(item);
         }
     }
