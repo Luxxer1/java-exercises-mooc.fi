@@ -27,7 +27,7 @@ public class Hold {
     }
 
     public void printItems() {
-        suitcases.stream().forEach(System.out::println);
+        suitcases.stream().forEach(Suitcase::printItems);
     }
 
     @Override
