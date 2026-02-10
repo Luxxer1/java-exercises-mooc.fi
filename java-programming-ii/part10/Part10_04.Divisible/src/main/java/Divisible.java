@@ -20,17 +20,7 @@ public class Divisible {
 
     public static ArrayList<Integer> divisible(ArrayList<Integer> numbers) {
         return numbers.stream()
-                .filter(value -> {
-                    if (value % 2 == 0) {
-                        return true;
-                    }
-
-                    if (value % 3 == 0) {
-                        return true;
-                    }
-
-                    return value % 5 == 0;
-                })
+                .filter(value -> value % 2 == 0 || value % 3 == 0 || value % 5 == 0)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
