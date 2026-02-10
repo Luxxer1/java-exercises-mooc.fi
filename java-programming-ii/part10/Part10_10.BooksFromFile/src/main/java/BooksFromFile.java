@@ -25,7 +25,7 @@ public class BooksFromFile {
                             Integer.valueOf(parts[2]),
                             parts[3])
                     )
-                    .collect(Collectors.toCollection(ArrayList::new));
+                    .collect(Collectors.toList());
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
