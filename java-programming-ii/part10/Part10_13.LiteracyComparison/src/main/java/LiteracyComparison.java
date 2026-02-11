@@ -1,8 +1,7 @@
-
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class LiteracyComparison {
     
@@ -10,13 +9,12 @@ public class LiteracyComparison {
         String fileName = "literacy.csv";
 
         try {
-            Files.lines(Paths.get(fileName))
-                    .sorted((p1, p2) ->
-                            Double.valueOf(p1.split(",")[5]).compareTo(Double.valueOf(p2.split(",")[5]))
-                    ).forEach(row -> {
-                        String[] rowSplited = row.split(",");
-                        System.out.println(rowSplited[3] + " (" + rowSplited[4] + "), " + rowSplited[2].split(" ")[1] + ", " + rowSplited[5]);
-                    });
+            List<Literacy> literacyList = Files.lines(Paths.get(fileName))
+                    .map(row -> row.split(","))
+                    .map(row -> new Literacy(row[2].replace("(%)", "").trim(), row[3], Integer.parseInt(row[4]), Double.parseDouble(row[5])))
+                    .collect(Collectors.toList());
+
+            literacyList.stream().sorted().forEach(System.out::println);
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
