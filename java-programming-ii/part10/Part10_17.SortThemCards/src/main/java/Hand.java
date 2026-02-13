@@ -15,4 +15,8 @@ public class Hand {
     public void print() {
         cards.forEach(System.out::println);
     }
+
+    public void sort() {
+        cards.sort(null);
+    }
 }
