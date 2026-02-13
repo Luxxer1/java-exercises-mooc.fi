@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Hand {
+public class Hand implements Comparable<Hand> {
     private List<Card> cards;
 
     public Hand() {
@@ -18,5 +18,16 @@ public class Hand {
 
     public void sort() {
         cards.sort(null);
+    }
+
+    public int sumCardsValue() {
+        return cards.stream()
+                .map(card -> card.getValue())
+                .reduce(0, (a, b) -> a + b);
+    }
+
+    @Override
+    public int compareTo(Hand another) {
+        return sumCardsValue() - another.sumCardsValue();
     }
 }
