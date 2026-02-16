@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -18,6 +19,10 @@ public class Hand implements Comparable<Hand> {
 
     public void sort() {
         cards.sort(null);
+    }
+
+    public void sortBySuit() {
+        Collections.sort(cards, new BySuitInValueOrder());
     }
 
     public int sumCardsValue() {
