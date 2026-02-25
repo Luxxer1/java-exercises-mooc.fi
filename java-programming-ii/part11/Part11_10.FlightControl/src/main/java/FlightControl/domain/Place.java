@@ -1,7 +1,7 @@
 package FlightControl.domain;
 
 public class Place {
-    String ID;
+    private String ID;
 
     public Place(String ID) {
         this.ID = ID;
