@@ -30,4 +30,8 @@ public class FlightControl {
         Flight flight = new Flight(airplane, new Place(departure), new Place(target));
         flights.putIfAbsent(flight.toString(), flight);
     }
+
+    public void printFlights() {
+        flights.values().forEach(System.out::println);
+    }
 }
