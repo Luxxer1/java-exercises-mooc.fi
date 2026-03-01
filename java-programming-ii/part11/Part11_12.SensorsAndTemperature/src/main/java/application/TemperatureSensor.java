@@ -14,11 +14,11 @@ public class TemperatureSensor implements Sensor {
     }
 
     public void setOn() {
-
+        status = true;
     }
 
     public void setOff() {
-
+        status = false;
     }
 
     public int read() {
