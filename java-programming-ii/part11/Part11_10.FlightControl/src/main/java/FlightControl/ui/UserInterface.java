@@ -15,6 +15,7 @@ public class UserInterface {
 
     public void start() {
         startAssetControl();
+        startFlightControl();
     }
 
     private void startAssetControl() {
@@ -35,7 +36,7 @@ public class UserInterface {
         }
     }
 
-    public void addAirplane() {
+    private void addAirplane() {
         System.out.println("Give the airplane id: ");
         String id = scanner.nextLine();
         System.out.println("Give the airplane capacity: ");
@@ -51,5 +52,26 @@ public class UserInterface {
         System.out.println("Give the target airport id: ");
         String target = scanner.nextLine();
         flightControl.addFlight(airplane, departure, target);
+    }
+
+    private void startFlightControl() {
+        while (true) {
+            System.out.println("Choose an action:\n" +
+                    "[1] Print airplanes\n" +
+                    "[2] Print flights\n" +
+                    "[3] Print airplane details\n" +
+                    "[x] Quit");
+
+            String input = scanner.nextLine();
+            if (input.equals("1")) {
+                flightControl.printAirplanes();
+            } else if (input.equals("2")) {
+
+            } else if (input.equals("3")) {
+
+            } else if (input.equals("x")) {
+                break;
+            }
+        }
     }
 }
