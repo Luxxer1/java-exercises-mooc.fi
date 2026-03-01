@@ -20,7 +20,7 @@ public class UserInterface {
 
     private void startAssetControl() {
         while (true) {
-            System.out.println("Choose an action:\n" +
+            System.out.println("Airport Asset Control\n" +
                     "[1] Add an airplane\n" +
                     "[2] Add a flight\n" +
                     "[x] Exit Airport Asset Control");
@@ -56,7 +56,7 @@ public class UserInterface {
 
     private void startFlightControl() {
         while (true) {
-            System.out.println("Choose an action:\n" +
+            System.out.println("Flight control\n" +
                     "[1] Print airplanes\n" +
                     "[2] Print flights\n" +
                     "[3] Print airplane details\n" +
