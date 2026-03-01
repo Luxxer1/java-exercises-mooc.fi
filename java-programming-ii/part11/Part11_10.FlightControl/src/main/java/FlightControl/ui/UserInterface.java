@@ -11,6 +11,7 @@ public class UserInterface {
 
     public UserInterface() {
         this.scanner = new Scanner(System.in);
+        this.flightControl = new FlightControl();
     }
 
     public void start() {
