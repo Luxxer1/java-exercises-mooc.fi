@@ -1,6 +1,7 @@
 package FlightControl.ui;
 
 import FlightControl.logic.FlightControl;
+import FlightControl.domain.Airplane;
 
 import java.util.Scanner;
 
@@ -16,7 +17,7 @@ public class UserInterface {
         startAssetControl();
     }
 
-    public void startAssetControl() {
+    private void startAssetControl() {
         while (true) {
             System.out.println("Choose an action:\n" +
                     "[1] Add an airplane\n" +
@@ -27,9 +28,9 @@ public class UserInterface {
             if (input.equals("1")) {
                 addAirplane();
             } else if (input.equals("2")) {
-
+                addFlight();
             } else if (input.equals("x")) {
-
+                break;
             }
         }
     }
@@ -40,5 +41,15 @@ public class UserInterface {
         System.out.println("Give the airplane capacity: ");
         int capacity = Integer.parseInt(scanner.nextLine());
         flightControl.addAirplane(id, capacity);
+    }
+
+    private void addFlight() {
+        System.out.println("Give the airplane id: ");
+        Airplane airplane = flightControl.getAirplane(scanner.nextLine());
+        System.out.println("Give the departure airport id: ");
+        String departure = scanner.nextLine();
+        System.out.println("Give the target airport id: ");
+        String target = scanner.nextLine();
+        flightControl.addFlight(airplane, departure, target);
     }
 }
