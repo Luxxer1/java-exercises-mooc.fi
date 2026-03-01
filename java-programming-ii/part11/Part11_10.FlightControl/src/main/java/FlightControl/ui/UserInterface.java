@@ -68,10 +68,15 @@ public class UserInterface {
             } else if (input.equals("2")) {
                 flightControl.printFlights();
             } else if (input.equals("3")) {
-
+                printAirplaneDetails();
             } else if (input.equals("x")) {
                 break;
             }
         }
+    }
+
+    private void printAirplaneDetails() {
+        System.out.println("Give the airplane id: ");
+        System.out.println(flightControl.getAirplane(scanner.nextLine()));
     }
 }
