@@ -57,7 +57,7 @@ public class UserInterface {
 
     private void startFlightControl() {
         while (true) {
-            System.out.println("Flight control\n" +
+            System.out.println("Flight Control\n" +
                     "[1] Print airplanes\n" +
                     "[2] Print flights\n" +
                     "[3] Print airplane details\n" +
