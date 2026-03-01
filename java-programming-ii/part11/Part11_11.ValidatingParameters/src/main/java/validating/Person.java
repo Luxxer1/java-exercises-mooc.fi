@@ -15,7 +15,7 @@ public class Person {
         }
 
         if (age < 0 || age > 120) {
-            throw new IllegalArgumentException("The age should between 0 and 120");
+            throw new IllegalArgumentException("The age should be between 0 and 120");
         }
 
         this.name = name;
