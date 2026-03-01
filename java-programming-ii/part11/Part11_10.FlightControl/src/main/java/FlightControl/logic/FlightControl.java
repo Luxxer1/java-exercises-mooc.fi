@@ -22,6 +22,10 @@ public class FlightControl {
         return airplanes.get(ID);
     }
 
+    public void printAirplanes() {
+        airplanes.values().forEach(System.out::println);
+    }
+
     public void addFlight(Airplane airplane, String departure, String target) {
         Flight flight = new Flight(airplane, new Place(departure), new Place(target));
         flights.putIfAbsent(flight.toString(), flight);
