@@ -2,12 +2,15 @@ package application;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class AverageSensor implements Sensor {
     private List<Sensor> sensorList;
+    private List<Integer> readings;
 
     public AverageSensor() {
         this.sensorList = new ArrayList<>();
+        this.readings = new ArrayList<>();
     }
 
     public boolean isOn() {
@@ -33,13 +36,20 @@ public class AverageSensor implements Sensor {
             throw new IllegalStateException("Sensor is off or no sensor was added");
         }
 
-        return (int) sensorList.stream()
+        int read = (int) sensorList.stream()
                 .mapToInt(Sensor::read)
                 .average()
                 .getAsDouble();
+
+        readings.add(read);
+        return read;
     }
 
     public void addSensor(Sensor sensor) {
         sensorList.add(sensor);
+    }
+
+    public List<Integer> readings() {
+        return this.readings;
     }
 }
