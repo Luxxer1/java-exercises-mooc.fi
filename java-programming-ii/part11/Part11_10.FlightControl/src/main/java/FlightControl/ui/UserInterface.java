@@ -66,7 +66,7 @@ public class UserInterface {
             if (input.equals("1")) {
                 flightControl.printAirplanes();
             } else if (input.equals("2")) {
-
+                flightControl.printFlights();
             } else if (input.equals("3")) {
 
             } else if (input.equals("x")) {
