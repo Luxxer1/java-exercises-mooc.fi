@@ -2,6 +2,7 @@ package dictionary;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class SaveableDictionary {
     String file;
@@ -22,5 +23,20 @@ public class SaveableDictionary {
 
     public void delete(String word) {
         dictionary.remove(word);
+    }
+
+    public boolean load() {
+        try {
+            Scanner fileReader = new Scanner(file);
+            while (fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                String[] parts = line.split(":");
+                dictionary.putIfAbsent(parts[0], parts[1]);
+            }
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
