@@ -1,6 +1,6 @@
 package dictionary;
 
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -33,7 +33,7 @@ public class SaveableDictionary {
 
     public boolean load() {
         try {
-            Scanner fileReader = new Scanner(file);
+            Scanner fileReader = new Scanner(new File(file));
             while (fileReader.hasNextLine()) {
                 String line = fileReader.nextLine();
                 String[] parts = line.split(":");
@@ -55,7 +55,7 @@ public class SaveableDictionary {
 
             writer.close();
             return true;
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             return false;
         }
     }
