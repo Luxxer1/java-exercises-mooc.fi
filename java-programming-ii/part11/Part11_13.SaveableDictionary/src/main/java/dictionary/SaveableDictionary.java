@@ -1,15 +1,20 @@
 package dictionary;
 
+import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class SaveableDictionary {
-    String file;
-    Map<String, String> dictionary;
+    private String file;
+    private Map<String, String> dictionary;
+
+    public SaveableDictionary() {
+        this.dictionary = new HashMap<>();
+    }
 
     public SaveableDictionary(String file) {
-        this.dictionary = new HashMap<>();
         this.file = file;
     }
 
@@ -36,6 +41,20 @@ public class SaveableDictionary {
 
             return true;
         } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean save() {
+        try {
+            PrintWriter writer = new PrintWriter(file);
+            dictionary.forEach((key, value) -> {
+                writer.println(key + ":" + value);
+            });
+
+            writer.close();
+            return true;
+        } catch (FileNotFoundException e) {
             return false;
         }
     }
