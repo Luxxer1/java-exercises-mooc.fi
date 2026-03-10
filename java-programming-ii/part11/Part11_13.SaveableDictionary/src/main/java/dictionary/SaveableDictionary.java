@@ -17,4 +17,8 @@ public class SaveableDictionary {
     public String translate(String word) {
         return dictionary.get(word);
     }
+
+    public void delete(String word) {
+        dictionary.remove(word);
+    }
 }
