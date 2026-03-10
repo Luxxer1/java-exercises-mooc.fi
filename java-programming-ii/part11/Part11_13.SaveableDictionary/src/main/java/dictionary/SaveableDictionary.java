@@ -15,6 +15,7 @@ public class SaveableDictionary {
     }
 
     public SaveableDictionary(String file) {
+        this();
         this.file = file;
     }
 
@@ -23,7 +24,7 @@ public class SaveableDictionary {
     }
 
     public String translate(String word) {
-        return dictionary.get(word);
+        return dictionary.getOrDefault(word, null);
     }
 
     public void delete(String word) {
