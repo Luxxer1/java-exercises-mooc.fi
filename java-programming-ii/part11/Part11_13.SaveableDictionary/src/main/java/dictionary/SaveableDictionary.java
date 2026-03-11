@@ -21,33 +21,15 @@ public class SaveableDictionary {
 
     public void add(String word, String translation) {
         dictionary.putIfAbsent(word, translation);
+        dictionary.putIfAbsent(translation, word);
     }
 
     public String translate(String word) {
-        String translated = dictionary.getOrDefault(word, null);
-        if (translated == null) {
-            for (Map.Entry<String, String> entry: dictionary.entrySet()) {
-                if (entry.getValue().equals(word)) {
-                    translated = entry.getKey();
-                    break;
-                }
-            }
-        }
-
-        return translated;
+        return dictionary.getOrDefault(word, null);
     }
 
     public void delete(String word) {
-        if (dictionary.get(word) == null) {
-            for (Map.Entry<String, String> entry: dictionary.entrySet()) {
-                if (entry.getValue().equals(word)) {
-                    dictionary.remove(entry.getKey());
-                    break;
-                }
-            }
-        } else {
-            dictionary.remove(word);
-        }
+        dictionary.remove(word);
     }
 
     public boolean load() {
