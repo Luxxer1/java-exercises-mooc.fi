@@ -1,9 +1,11 @@
 package dictionary;
 
-import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+import java.io.File;
 import java.io.PrintWriter;
 
 public class SaveableDictionary {
@@ -29,7 +31,10 @@ public class SaveableDictionary {
     }
 
     public void delete(String word) {
+        String translation = translate(word);
+
         dictionary.remove(word);
+        dictionary.remove(translation);
     }
 
     public boolean load() {
@@ -38,7 +43,7 @@ public class SaveableDictionary {
             while (fileReader.hasNextLine()) {
                 String line = fileReader.nextLine();
                 String[] parts = line.split(":");
-                dictionary.putIfAbsent(parts[0], parts[1]);
+                add(parts[0], parts[1]);
             }
 
             return true;
@@ -50,14 +55,24 @@ public class SaveableDictionary {
     public boolean save() {
         try {
             PrintWriter writer = new PrintWriter(file);
-            dictionary.forEach((key, value) -> {
-                writer.println(key + ":" + value);
-            });
-
+            saveWords(writer);
             writer.close();
             return true;
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public void saveWords(PrintWriter writer) {
+        List<String> alreadySaved = new ArrayList<>();
+        dictionary.forEach((key, word) -> {
+            if (alreadySaved.contains(key)) return;
+
+            alreadySaved.add(key);
+            alreadySaved.add(word);
+
+            String toSave = key + ":" + word;
+            writer.println(toSave);
+        });
     }
 }
