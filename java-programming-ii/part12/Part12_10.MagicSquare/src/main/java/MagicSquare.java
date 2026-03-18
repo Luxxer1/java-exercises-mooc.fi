@@ -1,4 +1,4 @@
-
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -17,19 +17,33 @@ public class MagicSquare {
 
     // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
-        return new ArrayList<>();
+        ArrayList<Integer> sums = new ArrayList<>();
+        int sumColumn = 0;
+
+        for (int row = 0; row < this.square.length; row++) {
+            for (int column = 0; column < this.square[row].length; column++) {
+                sumColumn += this.square[row][column];
+            }
+            sums.add(sumColumn);
+            sumColumn = 0;
+        }
+
+        return sums;
     }
 
     public ArrayList<Integer> sumsOfColumns() {
+
         return new ArrayList<>();
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
+
         return new ArrayList<>();
     }
 
     // ready-made helper methods -- don't touch these
     public boolean isMagicSquare() {
+
         return sumsAreSame() && allNumbersDifferent();
     }
 
@@ -93,10 +107,12 @@ public class MagicSquare {
     }
 
     public int getWidth() {
+
         return this.square.length;
     }
 
     public int getHeight() {
+
         return this.square.length;
     }
 
