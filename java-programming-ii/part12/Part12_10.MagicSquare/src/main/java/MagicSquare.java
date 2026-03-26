@@ -32,8 +32,18 @@ public class MagicSquare {
     }
 
     public ArrayList<Integer> sumsOfColumns() {
+        ArrayList<Integer> sums = new ArrayList<>();
+        int sumColumn = 0;
 
-        return new ArrayList<>();
+        for (int column = 0; column < this.square[0].length; column++) {
+            for (int row = 0; row < this.square.length; row++) {
+                sumColumn += this.square[row][column];
+            }
+            sums.add(sumColumn);
+            sumColumn = 0;
+        }
+
+        return sums;
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
