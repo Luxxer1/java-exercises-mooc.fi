@@ -18,14 +18,14 @@ public class MagicSquare {
     // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
         ArrayList<Integer> sums = new ArrayList<>();
-        int sumColumn = 0;
+        int sumRow = 0;
 
         for (int row = 0; row < this.square.length; row++) {
             for (int column = 0; column < this.square[row].length; column++) {
-                sumColumn += this.square[row][column];
+                sumRow += this.square[row][column];
             }
-            sums.add(sumColumn);
-            sumColumn = 0;
+            sums.add(sumRow);
+            sumRow = 0;
         }
 
         return sums;
