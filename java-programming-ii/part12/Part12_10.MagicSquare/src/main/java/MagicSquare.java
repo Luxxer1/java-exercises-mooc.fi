@@ -47,7 +47,23 @@ public class MagicSquare {
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
-        return new ArrayList<>();
+        ArrayList<Integer> sumArray = new ArrayList<>();
+        int sumDiagonal = 0;
+
+        for (int i = 0; i < getWidth(); i++) {
+            sumDiagonal += square[i][i];
+        }
+
+        sumArray.add(sumDiagonal);
+        sumDiagonal = 0;
+
+        for (int i = getWidth() - 1; i >= 0; i--) {
+            sumDiagonal += square[i][i];
+        }
+
+        sumArray.add(sumDiagonal);
+
+        return sumArray;
     }
 
     // ready-made helper methods -- don't touch these
