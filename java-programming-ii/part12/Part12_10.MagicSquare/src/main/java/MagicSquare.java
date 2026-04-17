@@ -57,8 +57,8 @@ public class MagicSquare {
         sumArray.add(sumDiagonal);
         sumDiagonal = 0;
 
-        for (int i = getWidth() - 1; i >= 0; i--) {
-            sumDiagonal += square[i][i];
+        for (int i = 0; i < getWidth(); i++) {
+            sumDiagonal += square[i][getWidth() - 1 - i];
         }
 
         sumArray.add(sumDiagonal);
